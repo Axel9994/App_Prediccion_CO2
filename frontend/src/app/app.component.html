@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Flask Angular Template</a>
+</nav>
+<h4>App de Ejemplo</h4>
+<br>
+<div class="container">
+  <div class="col-md-10">
+    <form>
+      <div class="form-group">
+        <label for="numero" class="control-label col-md-2">Numero: </label>
+        <input type="text" class="form-control" name="numero" [(ngModel)]="data.numero">
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="hacerPeticion()">Mandar Peticion</button>
+      </div>
+    </form>
+  </div>
+</div>
