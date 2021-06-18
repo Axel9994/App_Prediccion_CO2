@@ -1,5 +1,4 @@
-# Flask Angular Minimal Template
+# App Prediccion CO2
 
-Template Minimo de Flask + Angular para App de Machine Learning
-Para ejecutarlo correr el siguiente comando de Docker:
-docker-compose up
+App realizada con el siguiente Template Flask + Angular + Docker:
+https://github.com/Axel9994/flask_angular_minimal_template
