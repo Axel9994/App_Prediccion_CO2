@@ -1,0 +1,12 @@
+<h4>App de Ejemplo</h4>
+<br>
+<form>
+  <div class="form-group">
+    <label for="numero" class="control-label col-md-2">Numero: </label>
+    <input type="text" class="form-control" name="numero" [(ngModel)]="data.numero">
+  </div>
+  <br>
+  <div class="form-group">
+    <button type="button" class="btn btn-primary" (click)="hacerPeticion()">Mandar Peticion</button>
+  </div>
+</form>
