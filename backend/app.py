@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from random import random
 from Clases.PeticionError import *
+from Clases.Predictor import *
 
 HOST = '0.0.0.0'
 PORT = 8081
@@ -13,8 +14,9 @@ app = Flask(__name__)
 def predict():
     try:
         X = request.get_json()
-        res = float(X['numero']) * random()
-        return jsonify({'response': res})
+        p = Predictor()
+        resultado = p.predecir(X)
+        return jsonify({'concentracion': resultado[0]})
     except:
         raise PeticionError(message = 'Peticion Mal Formateada', status_code = 400)
 
