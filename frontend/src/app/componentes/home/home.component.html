@@ -1,12 +1,58 @@
-<h4>App de Ejemplo</h4>
+<h4>Ingrese los Datos para Realizar Prediccion de Dioxido de Carbono</h4>
 <br>
-<form>
+<form [formGroup] ="dataForm" autocomplete="off" novalidate (ngSubmit)="hacerPeticion(dataForm.value)">
   <div class="form-group">
-    <label for="numero" class="control-label col-md-2">Numero: </label>
-    <input type="text" class="form-control" name="numero" [(ngModel)]="data.numero">
+    <label for="Month" class="control-label col-md-2">Mes: </label>
+    <select class="form-control" formControlName="Month" id="Month">
+      <option value="1">Enero</option>
+      <option value="2">Febrero</option>
+      <option value="3">Marzo</option>
+      <option value="4">Abril</option>
+      <option value="5">Mayo</option>
+      <option value="6">Junio</option>
+      <option value="7">Julio</option>
+      <option value="8">Agosto</option>
+      <option value="9">Septiembre</option>
+      <option value="10">Octubre</option>
+      <option value="11">Noviembre</option>
+      <option value="12">Diciembre</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="Hour" class="control-label col-md-2">Hora: </label>
+    <input type="text" class="form-control" formControlName="Hour" id="Hour">
+    <div class="col-md-6">
+      <em *ngIf="validateControl('Hour') && hasError('Hour', 'required')">Ingrese la Hora</em>
+      <em *ngIf="validateControl('Hour') && hasError('Hour', 'min')">La hora minima es de 0</em>
+      <em *ngIf="validateControl('Hour') && hasError('Hour', 'max')">La hora relativa maxima es de 23</em>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="T" class="control-label col-md-2">Temperatura: </label>
+    <input type="text" class="form-control" formControlName="T" id="T">
+    <div class="col-md-6">
+      <em *ngIf="validateControl('T') && hasError('T', 'required')">Ingrese la Temperatura</em>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="RH" class="control-label col-md-2">Humedad Relativa: </label>
+    <input type="text" class="form-control" formControlName="RH" id="RH">
+    <div class="col-md-6">
+      <em *ngIf="validateControl('RH') && hasError('RH', 'required')">Ingrese la Humedad Relativa</em>
+      <em *ngIf="validateControl('RH') && hasError('RH', 'min')">La humedad relativa minima es de 0</em>
+      <em *ngIf="validateControl('RH') && hasError('RH', 'max')">La humedad relativa maxima es de 100</em>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="CO" class="control-label col-md-2">Monoxido de Carbono: </label>
+    <input type="text" class="form-control" formControlName="CO" id="CO">
+    <div class="col-md-6">
+      <em *ngIf="validateControl('CO') && hasError('CO', 'required')">Ingrese la Humedad Relativa</em>
+      <em *ngIf="validateControl('CO') && hasError('CO', 'min')">La concentracion de Monoxido de Carbono minima es de 0</em>
+    </div>
   </div>
   <br>
   <div class="form-group">
-    <button type="button" class="btn btn-primary" (click)="hacerPeticion()">Mandar Peticion</button>
+    <button type="submit" class="btn btn-primary" (click)="hacerPeticion(dataForm.value)">Mandar Peticion</button>
   </div>
 </form>

@@ -35,7 +35,7 @@ class Predictor:
             self.get_summer(int(X['Month'])),
             float(X['T']),
             float(X['RH']),
-            float(X['PT08.S1(CO)'])
+            float(X['CO'])
         ]]
 
         return XN

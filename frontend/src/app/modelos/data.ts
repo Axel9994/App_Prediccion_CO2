@@ -1,3 +1,7 @@
 export class Data {
-    numero: number;
+    Month: number;
+    Hour: number;
+    T: number;
+    RH: number;
+    CO: number
 }
