@@ -53,6 +53,6 @@
   </div>
   <br>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" (click)="hacerPeticion(dataForm.value)">Mandar Peticion</button>
+    <button type="submit" class="btn btn-primary" (click)="hacerPeticion(dataForm.value)" [disabled]="!dataForm.valid">Mandar Peticion</button>
   </div>
 </form>
